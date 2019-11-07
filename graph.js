@@ -7,7 +7,9 @@ function(data)
         console.log("good", (data)),
         console.log(getquizgrades(data)),
         console.log(generatepoints(data))
-        console.log(setup(data))
+        console.log(setup(data)),
+            setup(data),
+        console.log(getpengday(data))
 
     },
 function (err)
@@ -62,14 +64,14 @@ var setup = function (points)
     .data(points)
     .enter()
     .append("circle")
-    .attr("r", 20)
+    .attr("r", 10)
     .attr("cx", function(p)
     {
         return p.xscale
     })
     .attr("cy"), function (p)
     {
-        return yscale
+        return p.yscale
     }
     
     var xscale = d3.scaleLinear()
@@ -89,6 +91,27 @@ var setup = function (points)
 
 }
 
+
+var makebuttons = function (day)
+{
+    
+    d3.select("buttons")
+    .selectAll("button")
+    .data(day)
+    
+}
+var makegraphperday = function (day)
+{
+    
+}
+
+var getpengday = function (data,index)
+{
+    var obj = {}
+    obj.quizes = data.quizes
+    obj.day = 
+    return 
+}
 
 
 
